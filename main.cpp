@@ -11,21 +11,29 @@ using namespace std;
 using namespace std::chrono;
 
 const int slice = 2, event = 4, structs = 3;
-long long 3Darray [slice][event][structs];
+long long array3 [slice][event][structs];
 
 int main() {
-    for (int i=0; i < events ; i++){
-        for (int a=0; a<structs; s++){
-            3Darray [1][i][a] =0;
+    for (int i=0; i < event ; i++){
+        for (int a=0; a<structs; a++){
+            array3 [1][i][a] =0;
         }
     }
-    for (int i = 0; i<15 ; i++){
-        for (int b=0; b < events ; b++){
-            for (int a=0; a<structs; s++){
-                3Darray [0][b][a] = i+b+a;
+    for (int i = 0; i< 5 ; i++){
+        for (int b=0; b < event ; b++){
+            for (int a=0; a<structs; a++){
+                array3 [0][b][a] = i+b+a;
             }
         }
+        for (int c=0; c < event ; c++){
+            for (int a=0; a<structs; a++){
+                array3 [1][c][a] += array3 [0][c][a] ;
+                cout << array3 [i][c][a] << endl;
+            }
+        }
+        
     }
+
     cout << setw(12) << "Operation"<< setw(12) << "Vector"<< setw(12) << "List"<< setw(12) << "Set" << endl;
     
     ifstream fin("codes.txt");
