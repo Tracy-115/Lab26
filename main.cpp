@@ -41,7 +41,7 @@ int main() {
 
     cout << setw(12) << "Operation"<< setw(12) << "Vector"<< setw(12) << "List"<< setw(12) << "Set" << endl;
     
-    string operations ["Read"]["Sort"]["Insert"]["Delete"];
+    string operations[4] ={"Read","Sort", "Insert", "Delete"};
 
     for (int i = 0; i<15; i++){
         ifstream fin("codes.txt");
@@ -85,9 +85,7 @@ int main() {
         auto durationSET = duration_cast<microseconds>(end - start);
         array3 [0][0][2] = durationSET.count();
 
-        cout << setw(12) << "Read" << setw(12) << vectorT << setw(12) << listT << setw(12) << setT << endl;
-
-            //TWO
+         //TWO
          start = high_resolution_clock::now();
         sort(numbers.begin(), numbers.end());
          end = high_resolution_clock::now();
@@ -101,8 +99,6 @@ int main() {
         array3 [0][1][1]= durationSl.count();
         
         array3 [0][1][2] = -1;
-
-        cout << setw(12) << "Set" << setw(12) << vectorS << setw(12) << listS << setw(12) << setSORT << endl;
 
 
         //THREE
@@ -130,9 +126,7 @@ int main() {
         end = high_resolution_clock::now();
         auto durationSETI = duration_cast<microseconds>(end - start);
         array3 [0][2][2] = durationSETI.count();
-        cout << setw(12) << "Insert" << setw(12) << vectorI << setw(12) <<  listI << setw(12) << setI << endl;
-
-        //FoOUR
+    
         vector<string> vectorDel=numbers;
         start = high_resolution_clock::now();
         vectorIns.erase(vectorIns.begin()+vectorIns.size()/2);
@@ -157,20 +151,23 @@ int main() {
         end = high_resolution_clock::now();
         auto durationSETE = duration_cast<microseconds>(end - start);
         array3 [0][3][2] = durationSETE.count();
-        for (int c=0; c < event ; c++){
+
+        for (int c=0; c < event ; c++){ //if it's only this, there is just too much data 
             for (int a=0; a<structs; a++){
                 array3 [1][c][a] += array3 [0][c][a] ;
-                cout << array3 [0][c][a] << endl;
+                //cout << array3 [0][c][a] << endl;
             }
         }
+    }
+    cout << "Number of Simulations: 15" << endl;
+    for (int c=0; c < event ; c++){ 
+        cout << operations[c];
+            for (int a=0; a<structs; a++){
+                long long aveg = array3 [1][c][a]/15;
+                cout << aveg;
+            }
+            cout << endl;
         }
     
     return 0;
 }
-
-/* syntax examples:
-auto start = high_resolution_clock::now()
-auto end = high_resolution_clock::now()
-auto duration = duration_cast<milliseconds>(end - start)
-duration.count() references elapsed milliseconds
-*/
