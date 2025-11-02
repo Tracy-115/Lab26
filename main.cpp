@@ -1,3 +1,6 @@
+//Kyawt Thinzar Min 
+//IDE used: VS code
+//:)
 #include <iostream>
 #include <chrono>
 #include <vector>
@@ -41,7 +44,7 @@ int main() {
             data.push_back(code);
         }
         fin.close();
-
+        //at the end of each sub-section e.g like the vector in Read, I added array3 [0][0][0] so that the data taken out from code.txt is stored in that specific 3D index in the array
         //ONE
         vector<string> numbers;
         auto start = high_resolution_clock::now();
@@ -147,7 +150,7 @@ int main() {
     for (int c=0; c < event ; c++){ 
         cout  << setw(12) << operations[c] << setw(12);
             for (int a=0; a<structs; a++){
-                long long aveg = array3 [1][c][a]/15;
+                long long aveg = array3 [1][c][a]/15; //here, i divided it out by 15 so that i will get the average over 15 simulations
                 cout << setw(12) << aveg;
             }
             cout << endl;
@@ -155,3 +158,5 @@ int main() {
     
     return 0;
 }
+//at first, I was getting zeros for both insert and delet, but when I changed it into nanoseconds, it worked out
+//i think this is because the operation got less time to compute because it was a small operation
