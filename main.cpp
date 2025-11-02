@@ -19,16 +19,18 @@ int main() {
             array3 [1][i][a] =0;
         }
     }
-    for (int i = 0; i< 5 ; i++){
+    for (int i = 0; i< 5 ; i++){ //testing, I ran it 5 times
+
         for (int b=0; b < event ; b++){
             for (int a=0; a<structs; a++){
                 array3 [0][b][a] = i+b+a;
             }
         }
+        
         for (int c=0; c < event ; c++){
             for (int a=0; a<structs; a++){
                 array3 [1][c][a] += array3 [0][c][a] ;
-                cout << array3 [i][c][a] << endl;
+                cout << array3 [0][c][a] << endl;
             }
         }
         
