@@ -11,10 +11,13 @@ using namespace std;
 using namespace std::chrono;
 
 const int slice = 2, event = 4, structs = 3;
+//slice: 0 holds the data and 1 accumulates it
+//events is the number of actions being done here
+//structs are for vectors, string, and list
 long long array3 [slice][event][structs];
 
 int main() {
-    for (int i=0; i < event ; i++){
+    for (int i=0; i < event ; i++){ // this initializes the slice 1 to be 0
         for (int a=0; a<structs; a++){
             array3 [1][i][a] =0;
         }
@@ -23,10 +26,10 @@ int main() {
 
         for (int b=0; b < event ; b++){
             for (int a=0; a<structs; a++){
-                array3 [0][b][a] = i+b+a;
+                array3 [0][b][a] = i+b+a; //this is where i added the dummy value
             }
         }
-        
+
         for (int c=0; c < event ; c++){
             for (int a=0; a<structs; a++){
                 array3 [1][c][a] += array3 [0][c][a] ;
