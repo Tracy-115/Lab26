@@ -93,7 +93,7 @@ int main() {
         start = high_resolution_clock::now();
         vectorIns.insert(vectorIns.begin()+vectorIns.size()/2, setValue);
         end = high_resolution_clock::now();
-        auto durationVI = duration_cast<microseconds>(end - start);
+        auto durationVI = duration_cast<nanoseconds>(end - start);
         array3 [0][2][0] = durationVI.count();
         
         list<string> listIns = lists;
@@ -102,21 +102,21 @@ int main() {
         start = high_resolution_clock::now();
         listIns.insert(listMiddle,setValue);
         end = high_resolution_clock::now();
-        auto durationLI = duration_cast<microseconds>(end - start);
+        auto durationLI = duration_cast<nanoseconds>(end - start);
         array3 [0][2][1] = durationLI.count();
         
         set<string> setIns= SET;
         start = high_resolution_clock::now();
         setIns.insert(setValue);
         end = high_resolution_clock::now();
-        auto durationSETI = duration_cast<microseconds>(end - start);
+        auto durationSETI = duration_cast<nanoseconds>(end - start);
         array3 [0][2][2] = durationSETI.count();
         //four
         vector<string> vectorDel=numbers;
         start = high_resolution_clock::now();
         vectorIns.erase(vectorIns.begin()+vectorIns.size()/2);
         end = high_resolution_clock::now();
-        auto durationVECTORE = duration_cast<microseconds>(end - start);
+        auto durationVECTORE = duration_cast<nanoseconds>(end - start);
         array3 [0][3][0] = durationVECTORE.count();
 
         list<string> listDel = lists;
@@ -125,7 +125,7 @@ int main() {
         start = high_resolution_clock::now();
         listDel.erase(listDelMid);
         end = high_resolution_clock::now();
-        auto durationLISTE = duration_cast<microseconds>(end - start);
+        auto durationLISTE = duration_cast<nanoseconds>(end - start);
         array3 [0][3][1] = durationLISTE.count();
 
         set<string> setDel= SET;
@@ -134,7 +134,7 @@ int main() {
         start = high_resolution_clock::now();
         setDel.erase(setMiddle);
         end = high_resolution_clock::now();
-        auto durationSETE = duration_cast<microseconds>(end - start);
+        auto durationSETE = duration_cast<nanoseconds>(end - start);
         array3 [0][3][2] = durationSETE.count();
 
         for (int c=0; c < event ; c++){ //if it's only this, there is just too much data 
