@@ -22,22 +22,7 @@ int main() {
             array3 [1][i][a] =0;
         }
     }
-    for (int i = 0; i< 5 ; i++){ //testing, I ran it 5 times
-
-        for (int b=0; b < event ; b++){
-            for (int a=0; a<structs; a++){
-                array3 [0][b][a] = i+b+a; //this is where i added the dummy value
-            }
-        }
-
-        for (int c=0; c < event ; c++){
-            for (int a=0; a<structs; a++){
-                array3 [1][c][a] += array3 [0][c][a] ;
-                cout << array3 [0][c][a] << endl;
-            }
-        }
-        
-    }
+    cout << "Number of Simulations: 15" << endl;
 
     cout << setw(12) << "Operation"<< setw(12) << "Vector"<< setw(12) << "List"<< setw(12) << "Set" << endl;
     
@@ -126,7 +111,7 @@ int main() {
         end = high_resolution_clock::now();
         auto durationSETI = duration_cast<microseconds>(end - start);
         array3 [0][2][2] = durationSETI.count();
-    
+        //four
         vector<string> vectorDel=numbers;
         start = high_resolution_clock::now();
         vectorIns.erase(vectorIns.begin()+vectorIns.size()/2);
@@ -159,12 +144,11 @@ int main() {
             }
         }
     }
-    cout << "Number of Simulations: 15" << endl;
     for (int c=0; c < event ; c++){ 
-        cout << operations[c];
+        cout  << setw(12) << operations[c] << setw(12);
             for (int a=0; a<structs; a++){
                 long long aveg = array3 [1][c][a]/15;
-                cout << aveg;
+                cout << setw(12) << aveg;
             }
             cout << endl;
         }
