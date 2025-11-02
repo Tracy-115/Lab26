@@ -19,6 +19,7 @@ int main() {
         return 1;
     }
 
+    
     vector<string>data;
     string code;
     while(fin>>code){
